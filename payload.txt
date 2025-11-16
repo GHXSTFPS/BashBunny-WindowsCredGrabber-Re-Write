@@ -1,5 +1,5 @@
 #!/bin/bash
-REM Re-Write of a windows cred grabbber by https://github.com/AlexanderWyt
+REM Update of a windows cred grabbber by https://github.com/AlexanderWyt
 
 ATTACKMODE HID STORAGE
 LED R
