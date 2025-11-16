@@ -4,7 +4,7 @@ Credit goes to https://github.com/AlexanderWyt for the original payload I just a
 
 <b>Future Ideas</b>
 <br>
-- Making payload.txt laucnh a powershell script that can run hidden for less visual disturbance
+- Making payload.txt launch a powershell script that can run hidden for less visual disturbance
 - Adding password cracking locally
 - Flush PowerShell History (Remove-Item (Get-PSReadlineOption).HistorySavePath -Force -ErrorAction SilentlyContinue)
 - Disable Event Logging Temporarily
